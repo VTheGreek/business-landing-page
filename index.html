@@ -8,9 +8,14 @@
   </head>
   <body>
     <header class="header">
-      <div class="container">
+      <div class="container header-content">
         <h1 class="logo">Urban Bar</h1>
-        <nav>
+        <button class="burger-menu" id="burgerMenu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <nav class="nav-menu" id="navMenu">
           <a href="#about">About</a>
           <a href="#menu">Menu</a>
           <a href="#gallery">Gallery</a>
@@ -29,11 +34,38 @@
 
     <section id="about" class="about">
         <div class="container">
-            <h3>Why To Choose Us?</h3>
+            <h3>Why Choose Urban Bar?</h3>
             <div class="features">
-                <div class="card">🍸 Signature Cocktails</div>
-                <div class="card">🎶 DJ Sets</div>
-                <div class="card">📍 At Centre</div>
+                <div class="feature-card">
+                    <div class="icon-circle">🍸</div>
+                    <h4>Signature Cocktails</h4>
+                    <p>Expertly crafted cocktails by our award-winning mixologists using premium spirits and fresh ingredients.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon-circle">🎶</div>
+                    <h4>World-Class DJ Sets</h4>
+                    <p>Experience the hottest beats from local and international DJs every weekend. Curated playlists for every vibe.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon-circle">📍</div>
+                    <h4>Prime Location</h4>
+                    <p>Located at the heart of the city, easily accessible and surrounded by the best dining and entertainment options.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon-circle">⭐</div>
+                    <h4>Exceptional Service</h4>
+                    <p>Our trained staff is dedicated to providing you with outstanding service and an unforgettable experience.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon-circle">🎉</div>
+                    <h4>Vibrant Atmosphere</h4>
+                    <p>Modern ambiance with premium décor creates the perfect setting for a night out with friends or colleagues.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon-circle">🎯</div>
+                    <h4>Private Events</h4>
+                    <p>Host your special occasions with our flexible event packages and dedicated event planning team.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -41,11 +73,44 @@
     <section id="menu" class="menu">
         <div class="container">
             <h3>Popular Drinks</h3>
-            <ul>
-                <li>Mojito</li>
-                <li>Negroni</li>
-                <li>Whiskey Sour</li>
-            </ul>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <img src="/pctrs/Drinks/Mojito.png" alt="Mojito" class="drink-img">
+                    <h4>🍹 Mojito</h4>
+                    <p>Rum, mint, lime, soda & sugar</p>
+                    <span class="price">€12</span>
+                </div>
+                <div class="menu-item">
+                    <img src="/pctrs/Drinks/Negroni.png" alt="Negroni" class="drink-img">
+                    <h4>🍸 Negroni</h4>
+                    <p>Gin, Campari & sweet vermouth</p>
+                    <span class="price">€14</span>
+                </div>
+                <div class="menu-item">
+                    <img src="/pctrs/Drinks/Whiseky sour.png" alt="Whiskey Sour" class="drink-img">
+                    <h4>🥃 Whiskey Sour</h4>
+                    <p>Whiskey, lemon juice & egg white</p>
+                    <span class="price">€13</span>
+                </div>
+                <div class="menu-item">
+                    <img src="/pctrs/Drinks/Margarita.png" alt="Margarita" class="drink-img">
+                    <h4>🍋 Margarita</h4>
+                    <p>Tequila, triple sec & lime juice</p>
+                    <span class="price">€12</span>
+                </div>
+                <div class="menu-item">
+                    <img src="/pctrs/Drinks/Strawberry Daquiri.png" alt="Daiquiri" class="drink-img">
+                    <h4>🍓 Strawberry Daiquiri</h4>
+                    <p>Rum, lime juice & strawberry puree</p>
+                    <span class="price">€11</span>
+                </div>
+                <div class="menu-item">
+                    <img src="/pctrs/Drinks/Cosmopolitan.png" alt="Cosmopolitan" class="drink-img">
+                    <h4>🌹 Cosmopolitan</h4>
+                    <p>Vodka, cranberry & lime juice</p>
+                    <span class="price">€13</span>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -53,9 +118,9 @@
         <div class="container">
             <h3>Gallery</h3>
             <div class="grid">
-                <div class="img"></div>
-                <div class="img"></div>
-                <div class="img"></div>
+                <div class="img"><img src="/pctrs/ChatGPT Image Jan 5, 2026, 07_55_03 PM.png" alt="bar background"></div>
+                <div class="img"><img src="/pctrs/ChatGPT Image Jan 5, 2026, 08_33_30 PM.png" alt="bar tables"></div>
+                <div class="img"><img src="/pctrs/ChatGPT Image Jan 5, 2026, 08_37_07 PM.png" alt="bar from outside"></div>
             </div>
         </div>
     </section>
@@ -73,5 +138,22 @@
         <p>© 2026 Urban Bar</p>
     </footer>
 
+    <script>
+        const burgerMenu = document.getElementById('burgerMenu');
+        const navMenu = document.getElementById('navMenu');
+
+        burgerMenu.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            burgerMenu.classList.toggle('active');
+        });
+
+        // Close menu when a link is clicked
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                burgerMenu.classList.remove('active');
+            });
+        });
+    </script>
   </body>
 </html>

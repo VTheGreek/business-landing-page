@@ -118,6 +118,12 @@ body {
 .hero p {
     font-size: 1.3rem;
     letter-spacing: 0.15em;
+    margin-bottom: 2rem;
+}
+
+.hero .btn-primary {
+    margin-top: 1.5rem;
+    display: inline-block;
 }
 
 .features {

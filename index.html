@@ -138,6 +138,8 @@
         <p>© 2026 Urban Bar</p>
     </footer>
 
+    <a href="#" class="back-to-top" id="backToTop">↑</a>
+
     <script>
         const burgerMenu = document.getElementById('burgerMenu');
         const navMenu = document.getElementById('navMenu');
@@ -153,6 +155,22 @@
                 navMenu.classList.remove('active');
                 burgerMenu.classList.remove('active');
             });
+        });
+
+        // Back to top functionality
+        const backToTop = document.getElementById('backToTop');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTop.classList.add('show');
+            } else {
+                backToTop.classList.remove('show');
+            }
+        });
+
+        backToTop.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         });
     </script>
   </body>
